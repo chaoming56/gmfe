@@ -19,7 +19,7 @@ export interface KeyboardCellProps {
   /* Wrap 要 focus 到单元格的时候触发 onFocus，请实现此功能 */
   onFocus(): void
   /* 表格多的时候需要滚到视窗 */
-  onScroll(data: { leftFixedWidth: number; rightFixedWidth: number }): void
+  onScroll(data: WrapDataOptions['fixedWidths']): void
   /* 是否具有响应能力 */
   disabled?: boolean
 }

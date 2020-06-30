@@ -16,15 +16,15 @@ const KeyboardActionsName = {
   UP: 'up',
   DOWN: 'down',
   LEFT: 'left',
-  RIGHT: 'right'
+  RIGHT: 'right',
 }
 
 // 请在 keydown 事件内用此方法
 // type text 才有 selectionStart selectionEnd，why?
-const isInputUnBoundary = event => {
+const isInputUnBoundary = (event) => {
   const {
     key,
-    target: { tagName, type, selectionStart, selectionEnd, value }
+    target: { tagName, type, selectionStart, selectionEnd, value },
   } = event
 
   if (
@@ -52,7 +52,7 @@ const isInputUnBoundary = event => {
   return false
 }
 
-const getTd = dom => {
+const getTd = (dom) => {
   let parentDom = dom.parentNode
 
   while (
@@ -70,7 +70,7 @@ const getTd = dom => {
   return parentDom
 }
 
-const getTable = dom => {
+const getTable = (dom) => {
   let parentDom = dom.parentNode
 
   while (
@@ -118,8 +118,7 @@ const scrollIntoViewFixedWidth = (dom, fixedWidth) => {
     offsetLeft + offsetWidth - (table.offsetWidth - rightFixedWidth) >
     scrollLeft
   ) {
-    table.scrollLeft =
-      offsetLeft + offsetWidth - (table.offsetWidth - rightFixedWidth)
+    table.scrollLeft = offsetLeft + offsetWidth - (table.offsetWidth - rightFixedWidth)
   }
 
   // 只 tablex 生效
@@ -136,8 +135,8 @@ const doFocus = (id, rowKey, columnKey) => {
   window.dispatchEvent(
     new window.CustomEvent(KEYBOARD_ONFOCUS + id, {
       detail: {
-        cellKey: `${rowKey}_${columnKey}`
-      }
+        cellKey: `${rowKey}_${columnKey}`,
+      },
     })
   )
 }
@@ -152,5 +151,5 @@ export {
   KeyboardActionsName,
   isInputUnBoundary,
   scrollIntoViewFixedWidth,
-  doFocus
+  doFocus,
 }
