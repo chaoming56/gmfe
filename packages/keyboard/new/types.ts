@@ -23,4 +23,17 @@ interface KeyboardCustomEvent {
   direction: KeyboardDirection
 }
 
-export type { KeyboardTableXProps, KeyboardTableXColumn, KeyboardCustomEvent }
+interface WrapDataOptions {
+  id: string
+  fixedWidths: {
+    leftFixedWidth: number
+    rightFixedWidth: number
+  }
+}
+export type {
+  KeyboardTableXProps,
+  KeyboardTableXColumn,
+  KeyboardCustomEvent,
+  KeyboardDirection,
+  WrapDataOptions,
+}
